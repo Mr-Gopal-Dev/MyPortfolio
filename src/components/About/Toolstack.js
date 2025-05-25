@@ -13,7 +13,7 @@ import {
 
 const Toolstack = () => {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Row style={{ justifyContent: "center" }}>
       <Col xs={4} md={2} className="tech-icons" title="Visual Studio">
         <SiVisualstudio title="Visual Studio" />
       </Col>

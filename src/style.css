@@ -261,10 +261,20 @@ button:focus {
   background-repeat: no-repeat;
 }
 
-.home-content {
-  padding: 9rem 0 2rem !important;
-  color: whitesmoke;
-  text-align: left;
+@media only screen and (min-width: 769px) {
+  .home-content {
+    padding: 9rem 0 2rem !important;
+    color: whitesmoke;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-content {
+    padding: 4rem 0 2rem !important;
+    color: whitesmoke;
+    text-align: left;
+  }
 }
 
 .heading {
@@ -273,7 +283,6 @@ button:focus {
 }
 
 .heading-name {
-  font-size: 2.5em !important;
   padding-left: 45px !important;
 }
 
@@ -444,7 +453,6 @@ button:focus {
 
 .project-card {
   padding-top: 50px !important;
-  padding-bottom: 50px !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
   height: auto !important;
@@ -597,7 +605,6 @@ button:focus {
 .resume-section {
   position: relative !important;
   padding-top: 110px !important;
-  padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
 }

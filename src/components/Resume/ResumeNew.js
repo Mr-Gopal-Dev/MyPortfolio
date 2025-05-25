@@ -5,6 +5,7 @@ import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import Preloader from "../../components/Pre";
 import pdfFile from "../../Assets/MyResume.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -12,6 +13,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const ResumeNew = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [numPages, setNumPages] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const onLoadSuccess = ({ numPages }) => setNumPages(numPages);
 
@@ -19,8 +21,14 @@ const ResumeNew = () => {
 
   useEffect(() => setWidth(window.innerWidth), []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
+      <Preloader load={loading} />
       <Container fluid className="resume-section">
         <Particle />
         <Row
